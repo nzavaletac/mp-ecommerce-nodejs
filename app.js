@@ -1,9 +1,10 @@
 var express = require("express");
+const bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var port = process.env.PORT || 3000;
 const mercadopago = require("mercadopago");
-
 var app = express();
+app.use(bodyParser.json());
 // Pirmero debemos inicializar nuestra referencia de mercado pago con la tokens que nos brinda la página de desarrolladores (una vez que saquemos la certificación mercado pago nos dará nuestras propias tokens de acceso)
 // access_token: Esta token se genera por cada establecimiento que desea integrar la pasarelela de pagos de mercadopago
 // integrator_id: Es el identificador de cada desarrollador certificado por mercado pago
